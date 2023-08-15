@@ -1,4 +1,3 @@
-import { User } from './../../models/user.model';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersListService } from 'src/app/services/users-list.service';
@@ -10,7 +9,7 @@ import { UsersListService } from 'src/app/services/users-list.service';
 })
 export class UserDetailsComponent {
   userId: number | undefined;
-  user: any;
+  user: any
 
   constructor(private route: ActivatedRoute, private usersListService: UsersListService) { }
 

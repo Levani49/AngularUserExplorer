@@ -1,3 +1,4 @@
+import { Posts } from './../models/posts.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -10,9 +11,8 @@ export class PostsListService {
 
   constructor(private http: HttpClient) {}
 
-  getPostsByUserId(userId: number): Observable<any[]> {
-    return this.http.get<any[]>(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
+  getPostsByUserId(userId: number): Observable<Posts[]> {
+    return this.http.get<Posts[]>(`${this.apiUrl}?userId=${userId}`);
   }
-
 
 }

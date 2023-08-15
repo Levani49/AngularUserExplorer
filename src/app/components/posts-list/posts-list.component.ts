@@ -1,3 +1,4 @@
+import { Posts } from './../../models/posts.model';
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 import { PostsListService } from 'src/app/services/posts-list.service';
@@ -9,14 +10,14 @@ import { PostsListService } from 'src/app/services/posts-list.service';
 })
 export class PostsListComponent {
   userId: number | undefined;
-  posts: any[] | undefined;
+  posts: Posts[] | undefined;
 
   constructor(private route: ActivatedRoute, private postsListService: PostsListService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.userId = Number(params.get('id'));
-      this.postsListService.getPostsByUserId(this.userId).subscribe((posts: any[]) => {
+      this.postsListService.getPostsByUserId(this.userId).subscribe((posts: Posts[]) => {
         this.posts = posts;
       });
     });
