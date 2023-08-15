@@ -1,0 +1,18 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td><button routerLink="/user/{{ user.id }}">დეტალურად</button></td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
