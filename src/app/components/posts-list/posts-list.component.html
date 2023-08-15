@@ -1,9 +1,15 @@
 <h2>Posts List</h2>
-<button (click)="goBack()">მთავარი გვერდი</button>
+<button (click)="goBack()" class="main-page">მთავარი გვერდი</button>
 
 <ul>
   <li *ngFor="let post of posts">
-    <p>Title: {{ post.title }}</p>
-    <p>Body: {{ post.body }}</p>
+    <div class="card-container">
+      <div class="card">
+        <p><strong>Title:</strong> {{ post.title }}</p>
+      </div>
+      <div class="card">
+        <p><strong>Body:</strong> {{ post.body }}</p>
+      </div>
+    </div>
   </li>
 </ul>
