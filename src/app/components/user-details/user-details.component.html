@@ -1,0 +1,33 @@
+ <div class="table-container" *ngIf="user">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Website</th>
+        <th>Company</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td>{{user.name}}
+        <td>{{user.username}}
+        <td>{{user.email}}
+        <td>{{user.address.city}},{{user.address.zipcode}},{{user.address.street}},{{user.address.suite}}
+        <td>{{user.phone}}
+        <td>{{user.website}}
+        <td>{{user.company.name}}
+  <td>
+  <button [routerLink]="['/user', userId, 'posts']">View Posts</button>
+
+  </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
